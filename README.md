@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>✨ 解锁你的24型灵魂人格 ✨</title>
-    <!-- 引入 Tailwind CSS 构建高颜值 UI -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
@@ -32,14 +31,12 @@
 </head>
 <body class="text-slate-800 antialiased selection:bg-rose-100 flex justify-center items-start min-h-screen">
 
-    <!-- 移动端容器架构 -->
     <div class="w-full max-w-md bg-white min-h-screen shadow-2xl flex flex-col justify-between relative overflow-hidden">
         
-        <!-- 背景点缀装饰层 -->
         <div class="absolute top-[-50px] right-[-50px] w-48 h-48 rounded-full bg-rose-100/40 blur-2xl pointer-events-none"></div>
         <div class="absolute bottom-[-20px] left-[-20px] w-64 h-64 rounded-full bg-amber-100/30 blur-3xl pointer-events-none"></div>
 
-        <!-- ==================== 1. 欢迎首页面 ==================== -->
+        <!-- 1. 欢迎首页面 -->
         <div id="welcome-view" class="flex-1 flex flex-col justify-between p-6">
             <div class="text-center pt-8">
                 <span class="inline-block bg-rose-50 text-[#ff2442] text-xs font-bold px-3 py-1.5 rounded-full border border-rose-200 tracking-wider mb-4 animate-bounce-slow">🔮 2026年最新爆款社交人格图鉴</span>
@@ -72,10 +69,9 @@
             </div>
         </div>
 
-        <!-- ==================== 2. 答题进行面 ==================== -->
+        <!-- 2. 答题进行面 -->
         <div id="quiz-view" class="hidden flex-1 flex flex-col justify-between p-6">
             <div>
-                <!-- 进度条 -->
                 <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mt-4">
                     <div id="progress-bar" class="brand-gradient h-full w-0 transition-all duration-300"></div>
                 </div>
@@ -84,15 +80,11 @@
                     <span>深度分析中...</span>
                 </div>
 
-                <!-- 问题卡片 -->
                 <div class="mt-8 bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-sm min-h-[140px] flex items-center">
                     <h3 id="question-title" class="text-xl font-bold text-slate-800 leading-relaxed">正在加载问题...</h3>
                 </div>
 
-                <!-- 选项列表 -->
-                <div id="options-container" class="mt-6 space-y-3">
-                    <!-- 动态注入选项 -->
-                </div>
+                <div id="options-container" class="mt-6 space-y-3"></div>
             </div>
             
             <div class="pt-6 text-center text-xs text-slate-400">
@@ -100,19 +92,17 @@
             </div>
         </div>
 
-        <!-- ==================== 3. 拦截付费面 ==================== -->
+        <!-- 3. 拦截付费面 -->
         <div id="pay-view" class="hidden flex-1 flex flex-col justify-between p-6">
             <div class="text-center pt-2">
                 <div class="w-16 h-16 bg-rose-50 text-[#ff2442] rounded-full flex items-center justify-center mx-auto text-3xl mb-3 shadow-sm">📊</div>
                 <h3 class="text-xl font-black">20维报告生成成功！</h3>
                 <p class="text-slate-500 text-xs mt-1">只差最后一步，即可解锁专属于你的高级人格图鉴</p>
                 
-                <!-- 虚线分割线 -->
                 <div class="border-t-2 border-dashed border-slate-200 my-4 relative">
                     <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3 text-xs text-slate-400 font-bold">精选特惠解锁</span>
                 </div>
 
-                <!-- 微信支付二维码展示区域 -->
                 <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-2xl max-w-[280px] mx-auto shadow-sm">
                     <img src="qr.jpg" alt="微信支付二维码" class="w-full aspect-[3/4] object-cover rounded-xl shadow-md border-2 border-white">
                     <p class="text-xs text-emerald-700 font-bold mt-2 flex items-center justify-center gap-1">
@@ -120,7 +110,6 @@
                     </p>
                 </div>
 
-                <!-- 付费解锁互动核心区 -->
                 <div class="mt-5 bg-slate-50 p-4 rounded-xl border border-slate-100 text-left">
                     <label class="block text-xs font-bold text-slate-500 mb-1.5">👇 请输入您实际支付的金额完成校验：</label>
                     <div class="relative rounded-lg shadow-sm">
@@ -140,10 +129,9 @@
             </div>
         </div>
 
-        <!-- ==================== 4. 报告生成结果面 ==================== -->
+        <!-- 4. 报告生成结果面 -->
         <div id="result-view" class="hidden flex-1 p-6 bg-slate-50 overflow-y-auto">
             <div class="bg-white border-2 border-slate-900 rounded-3xl p-5 shadow-[6px_6px_0px_#1e293b] relative overflow-hidden">
-                <!-- 右上角潮流标志标签 -->
                 <div class="absolute top-0 right-0 brand-gradient text-white text-[10px] font-bold px-4 py-1 rounded-bl-xl tracking-wider">
                     PRO RARE
                 </div>
@@ -151,7 +139,19 @@
                 <div class="border-b border-slate-100 pb-4">
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">MY MBTI RARE FACTOR</p>
                     <h2 id="result-title" class="text-2xl font-black text-slate-900 mt-1">加载中...</h2>
-                    <div class="flex flex-wrap gap-1.5 mt-2.5" id="result-tags"></div>
+                    
+                    <!-- 新增：醒目的性格字母代码展示区 -->
+                    <div class="mt-3 bg-rose-50 border border-rose-100 rounded-xl p-3 flex items-center gap-3">
+                        <div class="bg-white text-[#ff2442] font-black text-2xl tracking-widest px-4 py-1.5 rounded-lg shadow-sm border border-rose-50" id="result-code">
+                            MBTI
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <span class="text-[13px] font-bold text-rose-800">专属性格代码认证</span>
+                            <span class="text-[10px] font-medium text-rose-500 mt-0.5">你的底层行为逻辑模型</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5 mt-3" id="result-tags"></div>
                 </div>
 
                 <!-- 核心维度指标分析 -->
@@ -217,12 +217,10 @@
 
     </div>
 
-    <!-- Custom Toast 弹窗组件 -->
+    <!-- Custom Toast -->
     <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 bg-slate-900/95 text-white text-xs font-bold py-3 px-5 rounded-full shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2 whitespace-nowrap"></div>
 
-    <!-- ==================== 核心逻辑 JavaScript 引擎 ==================== -->
     <script>
-        // 扩充至 20 道题目，多维度深层刻画
         const quizData = [
             { q: "周末如果你有整整一天的空闲时间，你会怎么度过？", a: [{ text: "火速组局！约上朋友出门探店、疯狂拍照打卡✨", score: 4 }, { text: "宅在家里，开着香薰点外卖，看剧刷手机一整天🛌", score: 1 }, { text: "独自去美术馆、咖啡厅或图书馆，享受高质量独处☕", score: 2 }, { text: "做周密的搞钱或学习计划，把每一小时安排得明明白白📅", score: 3 }] },
             { q: "当看到朋友圈有人发了一段略带伤感的深夜emo文字，你的第一反应是？", a: [{ text: "立刻私聊对方疯狂输出小作文安慰，给足情绪价值❤️", score: 4 }, { text: "理性分析他遇到啥事了，并试图找出解决的核心方案💡", score: 3 }, { text: "默默点个赞，或者假装没看到直接划走，保持清静🤫", score: 2 }, { text: "内心毫无波澜甚至想笑，觉得对方有点太作了🃏", score: 1 }] },
@@ -246,23 +244,26 @@
             { q: "总结一下，你觉得真正的“做自己”是？", a: [{ text: "完全不在意他人的世俗眼光，只要我自洽就行🍃", score: 4 }, { text: "不断挑战自己的极限，实现个人阶层的跨越和进阶👑", score: 3 }, { text: "能够自由自在地表达各种情绪，不压抑不内耗❤️", score: 2 }, { text: "时刻保持清醒，拥有对生活各个方面的绝对掌控感🎯", score: 1 }] }
         ];
 
-        // 24 种全网热门人格数据库 (去小红书化)
+        // 数据库新增了 code（性格代码）字段
         const personalityData = [
-            { title: "全能型松弛感大师", tags: ["超级精神富翁", "反内耗达人", "松弛感天花板"], desc: "你是互联网上最让人羡慕的那类人！体内自带净化器，任何焦虑和内耗传到你这里都会自动消散。你活得通透且自由，擅长用最舒服的姿势去过一生，搞钱只是你的副产品，享受当下才是你的终极王道。", s1: "98%", s2: "75%", s3: "88%", matchG: "人间清醒搞钱脑", matchB: "终极内耗小陀螺" },
-            { title: "人间清醒搞钱脑", tags: ["智商随时在线", "搞钱特工", "超级理性"], desc: "恋爱脑在你这里根本不存在，你的大脑结构极其清晰，几乎所有的高效思考都围绕着‘如何实现降维打击’和‘资产增值’。看问题直击本质，冷酷中带着极强的个人魅力，是朋友圈里最靠谱的终极顾问。", s1: "45%", s2: "99%", s3: "95%", matchG: "纯血绝绝子气氛组", matchB: "纯情恋爱脑化身" },
-            { title: "浓颜系社牛天花板", tags: ["全场焦点", "快乐源泉", "情绪价值暴击"], desc: "只要有你在的地方，就绝对不会冷场！你就像一颗行走的多巴胺炸弹，无时无刻不在散发着光芒和能量。你极其擅长捕捉他人的情绪并给予最温暖的回馈，天生就适合站在聚光灯下发光发热。", s1: "80%", s2: "85%", s3: "50%", matchG: "清冷感断舍离i人", matchB: "阴郁抬杠艺术家" },
-            { title: "清冷感断舍离i人", tags: ["微冷调美学", "高质量独处", "深度思考"], desc: "你散发着一种迷人的‘生人勿近’的高级感。比起喧嚣的社交，你更迷恋一杯咖啡、一本好书的独处时光。你对朋友的筛选极度严格，宁缺毋滥。你的灵魂深邃如银河，只有真正同频的人才能读懂你的温柔。", s1: "92%", s2: "68%", s3: "96%", matchG: "浓颜系社牛天花板", matchB: "低配话唠轰炸机" },
-            { title: "发疯美学实践家", tags: ["自由灵魂", "拒绝被定义", "精神状态极前卫"], desc: "你的精神状态领先这个世界至少50年！你完全不在乎世俗的眼光，快乐就是你的唯一指针。面对不公和内卷，你选择用极具艺术感的方式‘发疯’来解构一切压力。幽默、毒舌却极其善良是你的底色。", s1: "95%", s2: "70%", s3: "90%", matchG: "天马行空梦想家", matchB: "老古董规矩守门人" },
-            { title: "天马行空灵感制造机", tags: ["脑洞大开", "审美艺术家", "拒绝平庸"], desc: "你的大脑是一个无穷无尽的奇妙点子库！你讨厌任何一成不变的公式化生活，生活中的一片落叶、一个微表情都能成为你创作的养分。虽然偶尔会被人说有点‘活在理想国’，但你这种高维的审美是无价的。", s1: "85%", s2: "78%", s3: "85%", matchG: "发疯美学实践家", matchB: "表格控强迫症晚期" },
-            { title: "硬核执行力大猛人", tags: ["狠人一枚", "说到做到", "自律狂魔"], desc: "你是绝对的行动派，在你的字典里没有‘拖延症’这三个字。立下的Flag对你来说就是必须攻克的山头。你的气场强大到让人退避三舍，但也因为无与伦比的靠谱度，成为了所有人最想抱大腿的终极战友。", s1: "60%", s2: "95%", s3: "90%", matchG: "佛系随缘小锦鲤", matchB: "画大饼口头大师" },
-            { title: "佛系随缘小锦鲤", tags: ["运势绝佳", "得之我幸", "人间富贵花"], desc: "你完美地诠释了什么叫‘顺其自然’。你很少去强求什么，但神奇的是，好运总是会在关键时刻砸到你的头上。你心态好到爆炸，不争不抢反而让你成为了磁场最干净、最吸好运的移动人间大锦鲤。", s1: "96%", s2: "80%", s3: "70%", matchG: "硬核执行力大猛人", matchB: "过度焦虑制造机" }
+            { title: "全能型松弛感大师", code: "ENFP", tags: ["超级精神富翁", "反内耗达人", "松弛感天花板"], desc: "你是互联网上最让人羡慕的那类人！体内自带净化器，任何焦虑和内耗传到你这里都会自动消散。你活得通透且自由，擅长用最舒服的姿势去过一生，搞钱只是你的副产品，享受当下才是你的终极王道。", s1: "98%", s2: "75%", s3: "88%", matchG: "人间清醒搞钱脑", matchB: "终极内耗小陀螺" },
+            { title: "人间清醒搞钱脑", code: "INTJ", tags: ["智商随时在线", "搞钱特工", "超级理性"], desc: "恋爱脑在你这里根本不存在，你的大脑结构极其清晰，几乎所有的高效思考都围绕着‘如何实现降维打击’和‘资产增值’。看问题直击本质，冷酷中带着极强的个人魅力，是朋友圈里最靠谱的终极顾问。", s1: "45%", s2: "99%", s3: "95%", matchG: "纯血绝绝子气氛组", matchB: "纯情恋爱脑化身" },
+            { title: "浓颜系社牛天花板", code: "ESFJ", tags: ["全场焦点", "快乐源泉", "情绪价值暴击"], desc: "只要有你在的地方，就绝对不会冷场！你就像一颗行走的多巴胺炸弹，无时无刻不在散发着光芒和能量。你极其擅长捕捉他人的情绪并给予最温暖的回馈，天生就适合站在聚光灯下发光发热。", s1: "80%", s2: "85%", s3: "50%", matchG: "清冷感断舍离i人", matchB: "阴郁抬杠艺术家" },
+            { title: "清冷感断舍离i人", code: "ISTP", tags: ["微冷调美学", "高质量独处", "深度思考"], desc: "你散发着一种迷人的‘生人勿近’的高级感。比起喧嚣的社交，你更迷恋一杯咖啡、一本好书的独处时光。你对朋友的筛选极度严格，宁缺毋滥。你的灵魂深邃如银河，只有真正同频的人才能读懂你的温柔。", s1: "92%", s2: "68%", s3: "96%", matchG: "浓颜系社牛天花板", matchB: "低配话唠轰炸机" },
+            { title: "发疯美学实践家", code: "ENTP", tags: ["自由灵魂", "拒绝被定义", "精神状态极前卫"], desc: "你的精神状态领先这个世界至少50年！你完全不在乎世俗的眼光，快乐就是你的唯一指针。面对不公和内卷，你选择用极具艺术感的方式‘发疯’来解构一切压力。幽默、毒舌却极其善良是你的底色。", s1: "95%", s2: "70%", s3: "90%", matchG: "天马行空梦想家", matchB: "老古董规矩守门人" },
+            { title: "天马行空灵感制造机", code: "INFP", tags: ["脑洞大开", "审美艺术家", "拒绝平庸"], desc: "你的大脑是一个无穷无尽的奇妙点子库！你讨厌任何一成不变的公式化生活，生活中的一片落叶、一个微表情都能成为你创作的养分。虽然偶尔会被人说有点‘活在理想国’，但你这种高维的审美是无价的。", s1: "85%", s2: "78%", s3: "85%", matchG: "发疯美学实践家", matchB: "表格控强迫症晚期" },
+            { title: "硬核执行力大猛人", code: "ESTJ", tags: ["狠人一枚", "说到做到", "自律狂魔"], desc: "你是绝对的行动派，在你的字典里没有‘拖延症’这三个字。立下的Flag对你来说就是必须攻克的山头。你的气场强大到让人退避三舍，但也因为无与伦比的靠谱度，成为了所有人最想抱大腿的终极战友。", s1: "60%", s2: "95%", s3: "90%", matchG: "佛系随缘小锦鲤", matchB: "画大饼口头大师" },
+            { title: "佛系随缘小锦鲤", code: "ISFP", tags: ["运势绝佳", "得之我幸", "人间富贵花"], desc: "你完美地诠释了什么叫‘顺其自然’。你很少去强求什么，但神奇的是，好运总是会在关键时刻砸到你的头上。你心态好到爆炸，不争不抢反而让你成为了磁场最干净、最吸好运的移动人间大锦鲤。", s1: "96%", s2: "80%", s3: "70%", matchG: "硬核执行力大猛人", matchB: "过度焦虑制造机" }
         ];
 
-        // 动态补全至 24 种
+        // 其余的动态补全代码库分配
+        const mbtiTypes = ["INFJ", "ENTJ", "ISTJ", "ISFJ", "ESTP", "ESFP", "INTP", "ENFJ"];
         while(personalityData.length < 24) {
             const index = personalityData.length + 1;
+            const randomCode = mbtiTypes[index % mbtiTypes.length];
             personalityData.push({
                 title: `隐藏款精选人格 No.${index}`,
+                code: randomCode,
                 tags: [`高阶核心 #${index}`, "全网稀有", "独一无二"],
                 desc: `这是大数据库为你匹配的第${index}种隐藏款社交人格。你在感性与理性之间找到了极其罕见的完美黄金分割点。在网络上你是敏锐的观察者，在现实中你是脚踏实地的生活艺术家。`,
                 s1: `${Math.floor(Math.random() * 30) + 70}%`,
@@ -284,8 +285,6 @@
 
         function showQuestion() {
             const currentQ = quizData[currentQuestionIndex];
-            
-            // 进度条平滑动画
             setTimeout(() => {
                 const progressPercent = ((currentQuestionIndex + 1) / quizData.length) * 100;
                 document.getElementById('progress-bar').style.width = `${progressPercent}%`;
@@ -318,7 +317,6 @@
             }
         }
 
-        // 核心修改点：满 2 元（>=2）即可解锁
         function verifyPayment() {
             const amountInput = document.getElementById('pay-amount').value;
             const amount = parseFloat(amountInput);
@@ -347,6 +345,8 @@
             const result = personalityData[resultIndex];
 
             document.getElementById('result-title').innerText = result.title;
+            // 写入性格代码字母
+            document.getElementById('result-code').innerText = result.code;
             document.getElementById('result-desc').innerText = result.desc;
             document.getElementById('match-good').innerText = result.matchG;
             document.getElementById('match-bad').innerText = result.matchB;
@@ -375,10 +375,7 @@
             const toast = document.getElementById('toast');
             toast.innerText = message;
             toast.style.opacity = '1';
-            
-            setTimeout(() => {
-                toast.style.opacity = '0';
-            }, 2500);
+            setTimeout(() => { toast.style.opacity = '0'; }, 2500);
         }
     </script>
 </body>
